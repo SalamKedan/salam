@@ -1,0 +1,67 @@
+{#
+  Product Card Component for 'The Digital Playground' Theme
+  Design: Modern, Digital-focused, with a Funky Tilted Mockup.
+  Variables assumed: product (Salla Product Object)
+#}
+
+<a href="{{ product.url }}" class="product-card block group relative bg-white rounded-large overflow-hidden shadow-default transition duration-300 hover:shadow-lg">
+    
+    {# 1. Tilted Image/Mockup Area (The Funky Element) #}
+    <div class="relative overflow-hidden p-6 bg-gray-50 h-64 flex justify-center items-center">
+        
+        {# Digital Product Indicator Badge (Soft Lavender Accent: bg-salla-secondary) #}
+        <span class="absolute top-3 {{ app.language.is_rtl ? 'right-3' : 'left-3' }} z-10 
+                     bg-salla-secondary text-white text-xs font-bold px-3 py-1 rounded-full uppercase">
+            {{ 'product_card.digital_badge' | __ }}
+        </span>
+        
+        {# Product Image with Tilted Effect #}
+        <img 
+            src="{{ product.image | resize(300, 300) }}" 
+            alt="{{ product.name }}"
+            loading="lazy"
+            class="transform -rotate-6 transition-transform duration-500 group-hover:rotate-0 w-3/4 h-auto object-contain shadow-2xl rounded-xl"
+        >
+    </div>
+
+    {# 2. Details and Pricing Area #}
+    <div class="p-4 pt-3 space-y-2">
+        
+        {# Product Name #}
+        <h3 class="text-base font-semibold text-dark truncate group-hover:text-primary transition-colors duration-200">
+            {{ product.name }}
+        </h3>
+        
+        {# Category/Tags (Optional secondary label) #}
+        {% if product.categories|length %}
+            <p class="text-xs text-gray-500">
+                {{ product.categories | first.name }}
+            </p>
+        {% endif %}
+
+        {# Price and Rating #}
+        <div class="flex items-center justify-between">
+            <div class="text-lg font-bold text-primary">
+                {# Use Salla's built-in price component/filter for correct currency/format #}
+                {{ product.price | currency }}
+            </div>
+            
+            {# Simple Star Rating #}
+            {% if product.rating.value %}
+                <salla-rating class="text-sm" value="{{ product.rating.value }}"></salla-rating>
+            {% endif %}
+        </div>
+    </div>
+    
+    {# 3. Quick Action Button (Sky Blue Accent: bg-primary) #}
+    <div class="absolute inset-x-0 bottom-0 p-3 bg-white bg-opacity-95 transform translate-y-full group-hover:translate-y-0 transition duration-300">
+        <salla-button 
+            type="button" 
+            onclick="salla.event.dispatch('add-to-cart::open', {productId: {{ product.id }}})"
+            class="w-full btn btn--primary bg-primary text-white hover:bg-opacity-90 transition duration-200 rounded-lg py-2">
+            <i class="sicon-shopping-bag rtl:ml-2 ltr:mr-2"></i>
+            {{ 'common.add_to_cart' | __ }}
+        </salla-button>
+    </div>
+
+</a>
