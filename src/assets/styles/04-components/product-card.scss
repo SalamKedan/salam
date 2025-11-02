@@ -1,0 +1,55 @@
+/* 04-components/product-card.scss */
+
+.product-card {
+    /* Apply base Tailwind classes for consistency and our rounded look */
+    @apply rounded-large shadow-default transition duration-300;
+    
+    /* Ensure the card is easily clickable */
+    @apply relative block;
+
+    &:hover {
+        @apply shadow-xl;
+    }
+
+    /* Styling for the Tilted Image/Mockup Area */
+    .relative {
+        /* Set a fixed height for visual consistency on the grid */
+        @apply h-64 overflow-hidden; 
+    }
+
+    /* Tilted Image Styling */
+    img {
+        /* Using the transition classes defined in tailwind.config.js */
+        @apply transform -rotate-6 transition-transform duration-500;
+        /* Custom shadow to make the mockup look like a physical device */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        
+        .product-card:hover & {
+            /* Remove the tilt on hover for a clean reveal */
+            @apply rotate-0;
+        }
+    }
+
+    /* Digital Badge Styling */
+    span.bg-salla-secondary {
+        /* The custom lavender color */
+        background-color: #C6B4E5; 
+        @apply text-white text-xs font-bold px-3 py-1 rounded-full;
+    }
+
+    /* Quick Action Button Reveal Styling */
+    .absolute.bottom-0 {
+        @apply inset-x-0 p-3 bg-white bg-opacity-95 transform translate-y-full transition duration-300;
+    }
+    
+    .product-card:hover .absolute.bottom-0 {
+        /* Apply the slide up animation from tailwind.config.js */
+        @apply translate-y-0;
+    }
+
+    /* Price and Primary Color */
+    .text-primary {
+        /* Ensure price is strongly highlighted with Sky Blue */
+        color: var(--color-primary, #007AFF);
+    }
+}
