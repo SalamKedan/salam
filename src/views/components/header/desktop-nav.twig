@@ -1,0 +1,28 @@
+{#
+  Desktop Navigation for 'The Digital Playground' Theme
+  Features: Icon-based, modern, clean, and supports dual-language (RTL/LTR)
+#}
+
+{% set main_categories = [
+    { 'title': 'Planners', 'ar_title': 'المخططات', 'icon': 'sicon-calendar-date', 'url': '/categories/planners' },
+    { 'title': 'Diaries', 'ar_title': 'المذكرات', 'icon': 'sicon-lock', 'url': '/categories/diaries' },
+    { 'title': 'Education', 'ar_title': 'المواد التعليمية', 'icon': 'sicon-light-bulb', 'url': '/categories/education' },
+    { 'title': 'Games', 'ar_title': 'الألعاب', 'icon': 'sicon-game-controller-alt', 'url': '/categories/games' }
+] %}
+
+<nav class="flex h-full items-stretch space-x-6 rtl:space-x-reverse text-sm font-semibold">
+    {% for category in main_categories %}
+        {# Determine the label based on the current language #}
+        {% set label = app.language.is_rtl ? category.ar_title : category.title %}
+
+        <a href="{{ category.url }}" 
+           class="flex items-center text-dark hover:text-primary transition-colors duration-200 border-b-2 border-transparent hover:border-primary px-2 h-full">
+            
+            {# Icon with padding/margin for spacing #}
+            <i class="{{ category.icon }} rtl:ml-2 ltr:mr-2 text-xl"></i>
+            
+            {# Text Label #}
+            <span class="pt-1">{{ label }}</span>
+        </a>
+    {% endfor %}
+</nav>
