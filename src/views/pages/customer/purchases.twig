@@ -1,0 +1,55 @@
+{% extends "layouts.customer" %}
+
+{% block inner_title %}
+    {# Display the localized title for the page, which we added to ar.json #}
+    <h1 class="font-bold text-lg text-center sm:rtl:text-right sm:ltr:text-left mb-2">{{ 'pages.account.my_purchases' | __ }}</h1>
+{% endblock %}
+
+{% block inner_content %}
+    <salla-loading-placeholders type="list"></salla-loading-placeholders>
+    
+    {# 
+       The core component for displaying orders. 
+       We use specific Salla component attributes to filter for digital products only. 
+    #}
+    <salla-orders 
+        is-digital 
+        hide-filters 
+        hide-total
+        empty-message="{{ 'pages.order.no_orders_yet' | __ }}"
+        no-orders-illustration="{{ 'images/no-digital-purchases.svg' | asset }}"
+        order-card-class="p-4 rounded-lg shadow-default mb-4 transition duration-300 hover:shadow-md"
+    >
+        {# Custom rendering for the download link using a slot #}
+        <div slot="order-actions" class="flex flex-col space-y-2">
+            
+            {% if order.is_paid %}
+                {# 
+                   If the order is paid, list each product and its download link.
+                   This relies on the Salla-Orders component providing product data within its loop/slot.
+                #}
+                {% for item in order.items %}
+                    {% if item.is_digital %}
+                        <div class="flex items-center justify-between border-b last:border-b-0 py-2">
+                            <span class="font-medium text-dark">{{ item.product.name }}</span>
+                            
+                            <salla-button 
+                                onclick="window.location.href = '{{ item.product.download_link }}'"
+                                class="btn btn--primary btn--sm flex items-center rtl:space-x-reverse space-x-2">
+                                <i class="sicon-download text-lg"></i>
+                                <span>{{ 'pages.account.download_file' | __ }}</span>
+                            </salla-button>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                 <span class="text-sm text-red-600">{{ 'pages.order.payment_pending' | __ }}</span>
+            {% endif %}
+        </div>
+        
+    </salla-orders>
+
+    {# NOTE: You might need to add "pages.order.no_orders_yet" and "pages.order.payment_pending" 
+       to your ar.json for complete localization. #}
+
+{% endblock %}
