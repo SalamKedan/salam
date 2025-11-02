@@ -1,7 +1,8 @@
 {
   "blocks": {
     "header": {
-      "cart": "السلة"
+      "cart": "السلة",
+      "search_btn": "البحث"
     },
     "appBanner": {
       "download_now": "حمله الان"
@@ -18,10 +19,20 @@
       "days_since_added": "أيام من إضافته",
       "option_name": "الخيار",
       "option_content": "المحتوى"
+    },
+    "account": {
+      "my_purchases": "مشترياتي الرقمية",
+      "download_file": "تحميل الملف"
     }
   },
   "common": {
     "bank_offer_sub_title_multiple": "ادفع قيمة مشترياتك عبر أحد البطاقات البنكة التالية واحصل على الخصم المحدد",
     "bank_offer_sub_title_single": "ادفع قيمة مشترياتك عبر أحد بطاقات بنك :bank_name واحصل على خصم بنسبة "
+  },
+  "theme_nav": {
+    "planners": "المخططات",
+    "diaries": "المذكرات",
+    "education": "المواد التعليمية",
+    "games": "الألعاب البسيطة"
   }
 }
