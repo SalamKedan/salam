@@ -18,7 +18,9 @@
       "delete_period_ended": "تم انتهاء المدة المحددة لحذف التقييم",
       "days_since_added": "أيام من إضافته",
       "option_name": "الخيار",
-      "option_content": "المحتوى"
+      "option_content": "المحتوى",
+      "no_orders_yet": "لا توجد طلبات رقمية حتى الآن.",
+      "payment_pending": "الطلب بانتظار الدفع"
     },
     "account": {
       "my_purchases": "مشترياتي الرقمية",
@@ -34,5 +36,8 @@
     "diaries": "المذكرات",
     "education": "المواد التعليمية",
     "games": "الألعاب البسيطة"
+  },
+  "product_card": {
+    "digital_badge": "منتج رقمي"
   }
 }
