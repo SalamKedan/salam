@@ -9,6 +9,8 @@
     },
     "version": "1.0.0",
     "author": "Your Developer Name or Company",
+    "author_email": "aljohani.osamaa@gmail.com", 
+    "repository": "https://github.com/SalamKedan/salam",
     "link": "https://salla.partners/",
     "keywords": [
         "digital",
@@ -772,7 +774,7 @@
                             "banners.image": "https://cdn.salla.sa/mQgZlG/lkyDjYwvWJNmAQoGnLALLcUkm66rCCDbTyVlSGdH.jpg",
                             "banners.url": "",
                             "banners.title": "تصفَّح حسب التصنيف",
-                            "banners.description": "سهِّل تجربة التسوُّق والوصوم لمنتجاتك"
+                            "banners.description": "سهِّل تجربة التسوُّق والوصول لمنتجاتك"
                         },
                         {
                             "banners.image": "https://cdn.salla.sa/mQgZlG/lkyDjYwvWJNmAQoGnLALLcUkm66rCCDbTyVlSGdH.jpg",
