@@ -16,12 +16,14 @@ module.exports = {
             }
         },
         fontFamily: {
+            // Updated font names for Inter/Cairo support
             sans: [
-                'var(--font-main)',
+                'var(--font-main, Cairo)', // Cairo for Arabic as default fallback
+                'Inter', // Inter for English
                 '-apple-system',
                 'BlinkMacSystemFont',
             ],
-            primary: "var(--font-main)"
+            primary: "var(--font-main, Cairo)"
         },
         extend    : {
             transitionTimingFunction: {
@@ -30,11 +32,19 @@ module.exports = {
             gridTemplateColumns: {
                 'auto-fill'  : 'repeat(auto-fill, 290px)',
             },
+            // --- CUSTOM COLORS INJECTED HERE ---
             colors             : {
+                // Sky Blue Primary: Accessible via 'bg-primary'
+                'primary'      : 'var(--color-primary, #007AFF)',
+                // Soft Lavender Secondary: Accessible via 'bg-salla-secondary'
+                'salla-secondary': '#C6B4E5',
+                
+                // Existing theme colors
                 'dark'         : '#1D1F1F',
                 'darker'       : '#0E0F0F',
                 'danger'       : '#AE0A0A'
             },
+            // ------------------------------------
             spacing: {
               '3.75': '15px',
               '7.5' : '30px',
