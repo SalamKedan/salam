@@ -1,10 +1,40 @@
 {
     "name": {
-        "ar": "سلام",
-        "en": "Salam"
+        "en": "The Digital Playground",
+        "ar": "المتجر الرقمي المبتكر"
     },
-    "repository": "https://github.com/SalamKedan/salam",
-    "author_email": "aljohani.osamaa@gmail.com",
+    "description": {
+        "en": "A super user-friendly, modern, and funky theme for digital products: planners, education, and simple games. Optimized for Arabic (RTL) and English (LTR).",
+        "ar": "تصميم متجر رقمي عصري وبسيط، مخصص للمنتجات الرقمية مثل المخططات والمواد التعليمية والألعاب الخفيفة. مدعوم بالكامل للغة العربية."
+    },
+    "version": "1.0.0",
+    "author": "Your Developer Name or Company",
+    "link": "https://salla.partners/",
+    "keywords": [
+        "digital",
+        "planner",
+        "games",
+        "education",
+        "modern",
+        "arabic",
+        "twilight"
+    ],
+    "supported_languages": [
+        "ar",
+        "en"
+    ],
+    "options": {
+        "colors": {
+            "default": "#007AFF"
+        },
+        "currency_format": {
+            "decimal_separator": ".",
+            "thousand_separator": ",",
+            "decimals": 2,
+            "prefix": true
+        },
+        "lazy_loading": true
+    },
     "features": [
         "mega-menu",
         "fonts",
@@ -742,7 +772,7 @@
                             "banners.image": "https://cdn.salla.sa/mQgZlG/lkyDjYwvWJNmAQoGnLALLcUkm66rCCDbTyVlSGdH.jpg",
                             "banners.url": "",
                             "banners.title": "تصفَّح حسب التصنيف",
-                            "banners.description": "سهِّل تجربة التسوُّق والوصول لمنتجاتك"
+                            "banners.description": "سهِّل تجربة التسوُّق والوصوم لمنتجاتك"
                         },
                         {
                             "banners.image": "https://cdn.salla.sa/mQgZlG/lkyDjYwvWJNmAQoGnLALLcUkm66rCCDbTyVlSGdH.jpg",
@@ -1024,10 +1054,5 @@
                 }
             ]
         }
-    ],
-    "support_url": null,
-    "description": {
-        "ar": "",
-        "en": ""
-    }
+    ]
 }
